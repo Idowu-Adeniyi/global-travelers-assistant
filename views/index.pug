@@ -1,0 +1,48 @@
+doctype html
+html(lang="en")
+  head
+    title Global Traveler's Assistant
+    link(rel="stylesheet", href="/styles.css")
+  body
+    header
+      h1 Global Traveler's Assistant
+      nav
+        a(href="/") Home
+        a(href="/about") About
+        a(href="/contact") Contact
+    main
+      .home-description
+        h2 Welcome to Global Traveler's Assistant
+        p This app provides real-time weather data, local time zone information, and nearby cafes for any city in the world. Perfect for travelers, remote workers, and explorers!
+
+      form(action="/search" method="get")
+        label(for="city") Enter City:
+        input(type="text" id="city" name="city" placeholder="Enter city name" required)
+        button(type="submit") Search
+       
+      // Featured weather and cafes for Vancouver and Toronto
+      .featured-cities
+        h3 Featured Cities
+        .cities-row
+          .city
+            h4 Vancouver
+            // Weather icon for Vancouver
+            img(src=`https://openweathermap.org/img/wn/${vancouverWeather.icon}@2x.png`, alt="Vancouver Weather Icon")
+            p Weather: #{vancouverWeather.temp}°C, #{vancouverWeather.condition}
+            p Nearby Cafe:
+            img(src=`${vancouverCafeImage}`, alt="Vancouver Cafe")
+            p #{vancouverCafeName} - A nearby cafe
+          .city
+            h4 Toronto
+            // Weather icon for Toronto
+            img(src=`https://openweathermap.org/img/wn/${torontoWeather.icon}@2x.png`, alt="Toronto Weather Icon")
+            p Weather: #{torontoWeather.temp}°C, #{torontoWeather.condition}
+            p Nearby Cafe:
+            img(src=`${torontoCafeImage}` , alt="Toronto Cafe")
+            p #{torontoCafeName} - A nearby cafe
+
+    footer
+      p &copy; 2024 Global Traveler's Assistant
+
+
+

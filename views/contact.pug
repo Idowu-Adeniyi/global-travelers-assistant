@@ -1,0 +1,40 @@
+doctype html
+html(lang="en")
+  head
+    title Contact - Global Traveler's Assistant
+    link(rel="stylesheet", href="/styles.css")
+  body
+    header
+      h1 Contact Global Traveler's Assistant
+      nav
+        a(href="/") Home
+        a(href="/about") About
+        a(href="/contact") Contact
+    main
+      h2 Contact Us
+      p.form-description If you have any questions or inquiries, feel free to reach out to us.
+      p.form-description You can also use the form below to send us a message directly.
+
+      // Contact form
+      form(action="/contact" method="POST" class="contact-form")
+        div
+          label(for="name") Your Name:
+          input(type="text" id="name" name="name" placeholder="Enter your name" required)
+          
+        div
+          label(for="email") Your Email:
+          input(type="email" id="email" name="email" placeholder="Enter your email" required)
+          
+        div
+          label(for="message") Your Message:
+          textarea(id="message" name="message" placeholder="Enter your message" rows="5" required)
+          
+        div
+          button(type="submit") Send Message
+
+      p If you prefer, you can also email us directly at: 
+      p Email: adeniyi.idowu50@gmail.com
+
+    footer
+      p &copy; 2024 Global Traveler's Assistant
+

@@ -1,0 +1,51 @@
+
+doctype html
+html(lang="en")
+  head
+    title City Search Results - Global Traveler's Assistant
+    link(rel="stylesheet", href="/styles.css")
+  body
+    header
+      h1 City Search Results
+      nav
+        a(href="/") Home
+        a(href="/about") About
+        a(href="/contact") Contact
+    main
+      h2 Results for #{city}
+      
+      .weather
+        h3 Weather Information
+        p Temperature: #{weather.temp}°C
+        p Humidity: #{weather.humidity}%
+        p Wind Speed: #{weather.wind_speed} m/s
+        p Sunrise: #{weather.sunrise}
+        p Sunset: #{weather.sunset}
+      
+      .timezone
+        h3 Time Zone Information
+        p Current Time: #{timeInfo.current_time}
+        p Time Zone: #{timeInfo.timezone}
+
+      .cafes
+        h3 Nearby Cafes
+        if yelpBusinesses.length > 0
+          ul
+            each business in yelpBusinesses
+              li
+                img(src=business.image_url, alt=business.name)
+                h4= business.name
+                p= business.location.address1
+                p= business.rating + " stars"
+               
+        else
+          p No nearby cafes found.
+
+    footer
+      p &copy; 2024 Global Traveler's Assistant
+
+
+
+
+
+

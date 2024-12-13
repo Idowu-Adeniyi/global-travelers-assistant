@@ -8,9 +8,10 @@
     "dev": "nodemon app.js"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.18.1",
-    "cors": "^2.8.5"
+    "pug": "^3.0.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
